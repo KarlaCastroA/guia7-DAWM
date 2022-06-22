@@ -30,12 +30,12 @@ let elementP = document.getElementsByTagName('p');
 elementP[1].setAttribute('class','d-none');
 
 
-/* Challenge  */ 
-
-//Reemplace todos los elementos svg por img
-
-
-// Use el siguiente arreglo con las URLs a las imgagenes
+/* 
+Challenge
+  - Reemplace todos los elementos svg por img
+  - Use el arreglo con las URLs a las imgagenes y posicionarlas en los cards 
+*/ 
+ 
 let imagenes = [
   { url: 'https://images.unsplash.com/photo-1653942786759-f3caff948222?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzMDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60', alt: 'camino'}, 
   { url: 'https://images.unsplash.com/photo-1653988235129-842891001e10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzMDN8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60', alt: 'energia'}, 
@@ -50,13 +50,8 @@ let imagenes = [
 
 let svgArray = document.querySelectorAll('svg');
 
-
-// Copiar los atributos de svg a img
 for(var i = 1; i < svgArray.length ; i++) {
   let img = document.createElement('img');
-
-  var inner = svgArray[i].innerHTML
-  img.innerHTML = inner;
   img.setAttribute('src',imagenes[i-1]['url']);
   img.setAttribute('alt',imagenes[i-1]['alt']);
   svgArray[i].replaceWith(img)
